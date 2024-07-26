@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('font-Art/techno-race-italic/TechnoRaceItalic-eZRWe.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding: 10px;
+    font-family: 'MyCustomFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0D1B2A;
+    margin: 0;
+    height: 80%;
+    cursor: url('imagens/mouse-senac.png'), auto;
+}
+
+@keyframes shadowTransition {
+    0% {
+        box-shadow: 0px 0px 10px 10px #1B3B6F;
+    }
+    50% {
+        box-shadow: 0px 0px 10px 10px #4A90E2; 
+    }
+    100% {
+        box-shadow: 0px 0px 10px 10px #1B3B6F;
+    }
+}
+
+.main-title {
+    border: 4px solid #1B3B6F; 
+    box-shadow: 0px 0px 10px 10px #1B3B6F;
+    color: #E0E1DD; 
+    border-radius: 5px;
+    animation: shadowTransition 4s infinite;
+}
+
+h1 {
+    margin: 20px 0 10px 0;
+    font-size: 80px;
+    margin: 20px;
+    color: #E0E1DD; 
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #0D1B2A;
+}
+
+p {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #E0E1DD; 
+}
+
+#counter {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #e44356; 
+    text-shadow: 1px 1px 3px #0D1B2A;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 4px;
+    grid-gap: 20px;
+    perspective: 1000px;
+    border: 4px solid #1B3B6F; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px #0D1B2A;
+}
+
+.memory-card {
+    width: 135px;
+    height: 200px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s, border-color 0.3s;
+    cursor: url('imagens/mouse-senac.png'), auto;
+    border: 4px solid #417B9C; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0D1B2A;
+}
+
+.memory-card:hover {
+    transform: scale(1.03);
+    border-color: #7395AE; 
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.memory-card .front-face {
+    transform: rotateY(180deg);
+}
+
+.memory-card .back-face {
+    background: #0D1B2A; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E0E1DD; 
+    font-size: 2em;
+}
